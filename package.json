@@ -1,0 +1,29 @@
+{
+  "name": "bookAboard",
+  "version": "0.0.1",
+  "description": "Book a board application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node serve.js",
+    "dev": "node serve.js develop",
+    "test": "mocha test/all-tests.js",
+    "build": "browserify index.js -o deploy/bundle.js",
+    "clobber": "rm -rf node_modules; rm -f package-lock.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michael7337/bookAboard.git"
+  },
+  "author": "Joachim Brendborg",
+  "dependencies": {
+    "express": "^4.16.2",
+    "lodash": "^4.17.10",
+    "request": "^2.83.0",
+    "requirejs": "^2.3.5"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.0",
+    "browserify": "14.0.0"
+  }
+}
