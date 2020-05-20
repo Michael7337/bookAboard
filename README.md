@@ -1,5 +1,7 @@
 Bare Application
 
-clone
+git clone
+
 npm i
+
 npm run dev
