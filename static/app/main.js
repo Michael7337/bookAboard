@@ -1,3 +1,3 @@
 define([ './states/init' ], function(stateInit) {
-    stateInit('app.overview');
+    stateInit('app.login');
 });
