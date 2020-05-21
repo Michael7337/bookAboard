@@ -7,28 +7,45 @@ function (webix, $$, promise, stateRouter) {
       // webix ui definition here ...
       $ui: {
         rows: [{
-          id: "hello",
-          view: "text",
-          label: "Hello"
-        },{
-          view:"treetable",
-          columns:[
-            { id:"id", header:"", width:50},
-            { id:"value", header:"Film title", width:250,
-             template:"{common.treetable()} #value#" },
-            { id:"chapter", header:"Mode", width:200}
-          ],
-          data: [
-            { "id":"1", "value":"The Shawshank Redemption", "open":true, "data":[
-              { "id":"1.1", "value":"Part 1", "chapter":"alpha"},
-              { "id":"1.2", "value":"Part 2", "chapter":"beta", "open":true, "data":[
-                { "id":"1.2.1", "value":"Part 1", "chapter":"beta-twin"}
-              ]}
-            ]}
+          view: "toolbar", id:"toolbar", elements:[
+            {
+              view: "icon", icon: "bars",
+              click: function(){
+                if( $$("menu").config.hidden){
+                  $$("menu").show();
+                }
+                else
+                  $$("menu").hide();
+              }
+            },
+            {
+              view: "label",
+              label: "Demo"
+            }
           ]
         }]
       },
       $oninit: function (view, scope) {
+        webix.ui({
+          id: "menu",
+            view: "sidemenu",
+            width: "200",
+            height: "200",
+            position: "left",
+            body: {
+          view: "list",
+              borderless: true,
+              scroll: false,
+              template: "<span class='webix_icon fa-#icon#'></span> #value#",
+              data:[
+            {id: 1, value: "Customers", icon: "user"},
+            {id: 2, value: "Products", icon: "cube"},
+            {id: 3, value: "Reports", icon: "line-chart"},
+            {id: 4, value: "Archives", icon: "database"},
+            {id: 5, value: "Settings", icon: "cog"}
+          ]
+        }
+        })
       }
     },
     resolve: function(data, parameters, cb) {

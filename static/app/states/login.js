@@ -10,13 +10,14 @@ define([ 'webix', '$$', 'promise', './state-router'],
                         id: "log_form",
                         view: "form",
                         label: "login",
-                        width: "300", elements:[
+                        width: "100",
+                        elements:[
                             { view:"text", label:"Email", name:"email"},
                             { view:"text", type:"password", label:"Password", name:"password"},
                             { margin:5, cols:[
                                     { view:"button", value:"Login" , css:"webix_primary",
                                         on:{
-                                            onItemClick: function(){console,log(haj)}
+                                            onItemClick: function(){stateRouter.go("app.overview")}
                                         }},
                                     { view:"button", value:"Cancel"}
                                 ]}
