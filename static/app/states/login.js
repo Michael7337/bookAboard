@@ -6,23 +6,25 @@ define([ 'webix', '$$', 'promise', './state-router'],
             template: {
                 // webix ui definition here ...
                 $ui: {
-                    rows: [{
+                    rows: [{},{
                         id: "log_form",
                         view: "form",
                         label: "login",
-                        width: "100",
+                        width: 200,
+                        height: 1000,
                         elements:[
                             { view:"text", label:"Email", name:"email"},
                             { view:"text", type:"password", label:"Password", name:"password"},
                             { margin:5, cols:[
-                                    { view:"button", value:"Login" , css:"webix_primary",
+                                    { view:"button", value:"Login" , css:"webix_secondary",
                                         on:{
                                             onItemClick: function(){stateRouter.go("app.overview")}
                                         }},
                                     { view:"button", value:"Cancel"}
                                 ]}
-                        ]
-                    }],
+
+                        ,]},{}
+                    ]
                 },
                 $oninit: function (view, scope) {
                 }
@@ -34,3 +36,5 @@ define([ 'webix', '$$', 'promise', './state-router'],
             }
         };
     });
+
+
