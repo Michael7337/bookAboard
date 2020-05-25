@@ -6,7 +6,7 @@ define([ 'webix', '$$', 'promise', './state-router'],
             template: {
                 // webix ui definition here ...
                 $ui: {
-                    rows: [{},{
+                    rows: [{
                         id: "log_form",
                         view: "form",
                         label: "login",
@@ -23,7 +23,7 @@ define([ 'webix', '$$', 'promise', './state-router'],
                                     { view:"button", value:"Cancel"}
                                 ]}
 
-                        ,]},{}
+                        ,]}
                     ]
                 },
                 $oninit: function (view, scope) {
